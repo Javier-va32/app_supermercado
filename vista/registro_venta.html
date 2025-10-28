@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Registro de Venta</title>
+</head>
+<body>
+    <h2>Registro de Venta</h2>
+    <form action="../controlador/registro_venta.php" method="POST">
+
+        <!-- Nombre del cliente -->
+        <label for="cliente">Ingrese su nombre completo:</label><br>
+        <input type="text" id="cliente" name="cliente" required><br><br>
+
+        <h3>Selecciona productos:</h3>
+
+        <label>Frutas (Manzana) – $2000 el kilogramo</label><br>
+        <input type="text" name="producto_fruta" value="Manzana" readonly>
+        <input type="number" name="cantidad_fruta" min="0"><br><br>
+
+        <label>Verduras (Lechuga) – $1500 la unidad</label><br>
+        <input type="text" name="producto_verdura" value="Lechuga" readonly>
+        <input type="number" name="cantidad_verdura" min="0"><br><br>
+
+        <label>Carnes (Pollo) – $9000 el kilogramo</label><br>
+        <input type="text" name="producto_carne" value="Pollo" readonly>
+        <input type="number" name="cantidad_carne" min="0"><br><br>
+
+        <label>Lácteos (Leche) – $1200 la unidad</label><br>
+        <input type="text" name="producto_lacteo" value="Leche" readonly>
+        <input type="number" name="cantidad_lacteo" min="0"><br><br>
+
+        <label>Bebidas (Jugo) – $1800 la unidad</label><br>
+        <input type="text" name="producto_bebida" value="Jugo" readonly>
+        <input type="number" name="cantidad_bebida" min="0"><br><br>
+
+        <input type="submit" value="Registrar venta">
+    </form>
+</body>
+</html>
