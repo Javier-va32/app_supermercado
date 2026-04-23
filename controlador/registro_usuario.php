@@ -2,21 +2,20 @@
 // controlador/registro_usuario.php
 require_once '../modelo/modelo.php';
 
-$usuario = $_POST['usuario'];
+$usuario = trim($_POST['usuario'] ?? '');
 
-// Validar longitud exacta
-if (strlen($usuario) !== 8) {
-    die("Error: El nombre de usuario debe tener exactamente 8 caracteres.");
+if (empty($usuario)) {
+    die("Error: Debes ingresar un nombre de usuario.");
 }
 
-// Validar que comience con minúscula
-if (!preg_match('/^[a-z]/', $usuario)) {
-    die("Error: El nombre de usuario debe comenzar con una letra minúscula.");
+// Validar longitud mínima y máxima
+if (strlen($usuario) < 5 || strlen($usuario) > 30) {
+    die("Error: El nombre de usuario debe tener entre 5 y 30 caracteres.");
 }
 
-// Validar que termine con un carácter especial
-if (!preg_match('/[^a-zA-Z0-9]$/', $usuario)) {
-    die("Error: El nombre de usuario debe terminar con un carácter especial.");
+// Validar caracteres permitidos
+if (!preg_match('/^[a-zA-Z0-9_-]+$/', $usuario)) {
+    die("Error: El nombre de usuario solo puede contener letras, números, guion medio y guion bajo.");
 }
 
 // Validar que no esté repetido
@@ -31,6 +30,7 @@ if ($stmt->num_rows > 0) {
     $conn->close();
     die("Error: Este nombre de usuario ya existe.");
 }
+
 $stmt->close();
 
 // Insertar usuario

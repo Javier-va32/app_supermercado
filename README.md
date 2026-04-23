@@ -1,77 +1,124 @@
-# app_supermercado
+# FreshMarket – Sistema Web de Ventas Básico
 
-Aplicación web básica en PHP que permite:
+Aplicación web académica desarrollada con PHP y MySQL, orientada a simular el flujo básico de ventas de un supermercado.
 
-* Registrar usuarios
+El proyecto fue creado originalmente como trabajo práctico formativo y posteriormente mejorado para dejarlo como referencia de aprendizaje en desarrollo web backend básico.
 
-* Iniciar sesión
+---
 
-* Registrar ventas
+## Objetivo del proyecto
 
-* Generar comprobantes de compra
+Aplicar conceptos fundamentales de desarrollo web:
 
-El sistema funciona con formularios HTML simples y backend en PHP, simulando un sistema de gestión para un supermercado.
+- Formularios HTML
+- Procesamiento de datos con PHP
+- Conexión a base de datos MySQL
+- Registro de usuarios
+- Registro de ventas
+- Consultas SQL básicas
+- Navegación entre páginas
+- Organización simple tipo MVC
 
-
-## ¿Cómo se usa? 
-
-**1. Requisitos previos:**
-
-* Tener instalado XAMPP
-
-* Tener habilitado Apache y MySQL desde el panel de control de XAMPP
-
-**2. Pasos para ejecutarlo:**
-
-```
-1. Copia toda la carpeta del proyecto a:
-   C:\xampp\htdocs\app_supermercado
-
-2. Abre XAMPP y enciende el servidor Apache
-
-3. Abre el navegador y ve a:
-   http://localhost/app_supermercado/login.html
-``` 
-
-**3. Notas importantes:**
-
-* El sistema no usa base de datos real aún.
-
-* Los datos se procesan internamente con lógica PHP simple.
-
-* El login no es seguro aún, está pensado solo con fines educativos.
-
-## app_supermercado/
-
-|Documento | Explicación |
-|----------|-------------|
-|modelo.php | Lógica de productos y precios
-|login.php |  Procesa login
-|comprobante.php | Muestra resumen de la compra
-|registro_usuario.php | Procesa nuevo usuario
-|registro_venta.php | Procesa la venta y calcula totales
-|login.html | Formulario para iniciar sesión
-|registro_usuario.html | Formulario para registrar usuario
-|registro_venta.html | Formulario para registrar una venta
-
+---
 
 ## Tecnologías utilizadas
 
-* PHP puro (sin frameworks)
+- PHP
+- MySQL
+- HTML5
+- CSS3
+- XAMPP (Apache + MySQL)
 
-* HTML5
+---
 
-* Servidor local: XAMPP
+## Funcionalidades
 
-Mejoras previstas
+### Gestión de usuarios
 
-* Añadir CSS para mejorar el diseño
+- Registro de nuevos usuarios
+- Validación de nombre de usuario
+- Verificación de usuarios duplicados
+- Inicio de acceso mediante nombre de usuario
 
-* Implementar un sistema de login seguro con validación real
+### Gestión de ventas
 
-* Integrar una base de datos MySQL usando phpMyAdmin
+- Selección de productos
+- Ingreso de cantidades
+- Cálculo automático de subtotales
+- Registro de compras en base de datos
+- Generación de comprobante final
 
-## Autor
+### Experiencia de usuario
 
-Javier-va32
-GitHubHistorial de ventas
+- Navegación entre formularios
+- Autocompletado del nombre del cliente luego del acceso
+- Interfaz visual simple y clara
+
+---
+
+## Estructura del proyecto
+
+```text
+app_supermercado/
+└── index.php
+└── controlador/
+   └──comprobante.php
+   └──login.php
+   └──registro_usuario.php
+   └──registro_venta.php
+└── modelo/
+   └──modelo.php
+└── vista/
+   └──css
+      └──styles.css
+   └──login.html
+   └──registro_usuario.html
+   └──registro_venta.html
+└── database/
+│   └── schema.sql
+└── README.md
+```
+## Base de datos
+
+El proyecto sí utiliza base de datos MySQL.
+
+Incluye tablas para:
+
+- usuarios
+- ventas_usuario
+---
+
+El script de creación se encuentra en:
+```
+database/schema.sql
+```
+## Instalación local
+
+1. Instalar y ejecutar XAMPP
+2. Activar Apache y MySQL
+3. Copiar el proyecto en la carpeta htdocs
+4. Importar database/schema.sql en phpMyAdmin
+5. Abrir en navegador: http://localhost/app_supermercado/
+
+## Lo aprendido
+
+Durante este proyecto se practicaron conceptos como:
+
+- estructura básica MVC
+- uso de mysqli
+- consultas preparadas (prepare)
+- validación de formularios
+- flujo entre páginas con PHP
+- integración frontend + backend + base de datos
+
+## Estado del proyecto
+
+Finalizado.
+
+Se conserva como proyecto histórico de aprendizaje y práctica inicial en desarrollo web con PHP.
+
+No se contempla continuar su desarrollo, ya que actualmente mi enfoque principal está orientado a Java backend y tecnologías modernas.
+
+Autor
+
+Javier Valenzuela

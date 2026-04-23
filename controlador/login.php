@@ -2,7 +2,7 @@
 // controlador/login.php
 require_once '../modelo/modelo.php';
 
-$usuario = $_POST['usuario'] ?? '';
+$usuario = trim($_POST['usuario'] ?? '');
 
 if (empty($usuario)) {
     die("Error: Debes ingresar un nombre de usuario.");
@@ -16,7 +16,6 @@ $stmt->execute();
 $stmt->store_result();
 
 if ($stmt->num_rows > 0) {
-    // Redirigir al formulario de ventas con el nombre en la URL
     header("Location: ../vista/registro_venta.html?cliente=" . urlencode($usuario));
     exit();
 } else {

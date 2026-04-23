@@ -3,13 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <title>Login</title>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
     <h2>Login de Usuario</h2>
+    <div class = "container">
     <form action="../controlador/login.php" method="POST">
         <label for="usuario">Nombre de usuario:</label><br>
         <input type="text" id="usuario" name="usuario" required><br><br>
         <input type="submit" value="Entrar al sistema">
     </form>
+        <p>
+        ¿No tienes una cuenta en Freshmarket?
+        <a href="registro_usuario.html">Regístrate aquí</a>
+    </p>
+    </div>
+
 </body>
 </html>

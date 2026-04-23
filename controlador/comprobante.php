@@ -51,6 +51,11 @@ $resultado = $stmt->get_result();
                 <td colspan="2"><strong>$<?php echo $total_general; ?></strong></td>
             </tr>
         </table>
+        <p>
+            <a href="../vista/registro_venta.html?cliente=<?php echo urlencode($cliente); ?>">
+            Volver al menú de compra
+            </a>
+        </p>
     <?php else: ?>
         <p>No se encontraron compras registradas para este cliente.</p>
     <?php endif; ?>

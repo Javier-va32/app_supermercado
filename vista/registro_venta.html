@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Registro de Venta</title>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
     <h2>Registro de Venta</h2>
+    <div class = "container">
     <form action="../controlador/registro_venta.php" method="POST">
 
         <!-- Nombre del cliente -->
@@ -36,5 +38,14 @@
 
         <input type="submit" value="Registrar venta">
     </form>
+    </div>
+    <script>
+    const params = new URLSearchParams(window.location.search);
+    const cliente = params.get("cliente");
+
+    if (cliente) {
+        document.getElementById("cliente").value = cliente;
+    }
+</script>
 </body>
 </html>
